@@ -14,26 +14,9 @@ jobs:
         distribution: 'temurin'
         cache: 'maven'
     - name: Build with Maven
-      run: |
-        echo '<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">' > pom.xml
-        echo '<modelVersion>4.0.0</modelVersion>' >> pom.xml
-        echo '<groupId>com.sword.power</groupId>' >> pom.xml
-        echo '<artifactId>StoneSwordPower</artifactId>' >> pom.xml
-        echo '<version>1.0</version>' >> pom.xml
-        echo '<dependencies>' >> pom.xml
-        echo '<dependency>' >> pom.xml
-        echo '<groupId>org.spigotmc</groupId>' >> pom.xml
-        echo '<artifactId>spigot-api</artifactId>' >> pom.xml
-        echo '<version>1.21.1-R0.1-SNAPSHOT</version>' >> pom.xml
-        echo '<scope>provided</scope>' >> pom.xml
-        echo '</dependency>' >> pom.xml
-        echo '</dependencies>' >> pom.xml
-        echo '<build><plugins><plugin><groupId>org.apache.maven.plugins</groupId><artifactId>maven-compiler-plugin</artifactId><version>3.8.1</version><configuration><source>21</source><target>21</target></configuration></plugin></plugins></build>' >> pom.xml
-        echo '</project>' >> pom.xml
-        mvn clean package
+      run: mvn clean package
     - name: Upload Result
       uses: actions/upload-artifact@v3
       with:
         name: StoneSwordPower
         path: target/StoneSwordPower-1.0.jar
-        
