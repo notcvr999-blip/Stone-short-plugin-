@@ -1,0 +1,4 @@
+name: StoneSwordPower
+version: 1.0
+main: com.sword.power.Main
+api-version: 1.21
